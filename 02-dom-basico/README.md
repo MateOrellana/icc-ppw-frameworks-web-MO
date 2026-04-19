@@ -1,9 +1,9 @@
 # Práctica 2 - Manipulación del DOM con JavaScript
 
-**Asignatura:** Desarrollo Web  
+**Asignatura:** Programación y plataformas web
 **Estudiante:** Mateo Orellana  
-**Carrera:** Ingeniería de Sistemas  
-**Semestre:** 5° semestre  
+**Carrera:** Computación  
+**Semestre:** 5° ciclo 
 **Fecha:** 21 de Abril 2026  
 
 ---

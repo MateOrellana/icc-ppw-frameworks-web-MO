@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* ── Contenedor ── */
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+  color: #1a1a2e;
+}
+
+.container h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+/* ── Formulario ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #f0c040;
+}
+
+/* Campo con error */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+  border-color: #e74c3c;
+}
+
+/* ── Mensajes de error ── */
+.error-msg {
+  display: none;
+  color: #e74c3c;
+  font-size: 0.82rem;
+  margin-top: 5px;
+}
+
+.error-msg.visible {
+  display: block;
+}
+
+/* ── Contador de caracteres ── */
+.char-count {
+  text-align: right;
+  font-size: 0.82rem;
+  color: #999;
+  margin-top: 4px;
+}
+
+/* ── Botón enviar ── */
+button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  background-color: #f0c040;
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #d4a900;
+}
+
+/* ── Resultado del formulario ── */
+#resultado {
+  display: none;
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #eaf7ea;
+  border-left: 4px solid #27ae60;
+  border-radius: 8px;
+  font-size: 0.93rem;
+  line-height: 1.7;
+}
+
+#resultado.visible {
+  display: block;
+}
+
+#resultado strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #1a5c2a;
+}
+
+/* ── Sistema de tareas ── */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #f0c040;
+}
+
+#btn-agregar {
+  padding: 10px 20px;
+  background-color: #f0c040;
+  color: #1a1a2e;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+#btn-agregar:hover {
+  background-color: #d4a900;
+}
+
+/* ── Lista de tareas ── */
+#lista-tareas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tarea-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fafafa;
+  transition: background 0.2s;
+}
+
+.tarea-item:hover {
+  background: #f0f2f5;
+}
+
+.tarea-texto {
+  cursor: pointer;
+  flex: 1;
+  font-size: 0.95rem;
+  user-select: none;
+}
+
+/* Tarea completada */
+.tarea-item.completada {
+  background: #f7f7f7;
+}
+
+.tarea-item.completada .tarea-texto {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+/* ── Botón eliminar ── */
+.btn-eliminar {
+  padding: 6px 14px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.2s;
+  margin-left: 12px;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+/* ── Estado vacío ── */
+.estado-vacio {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+  padding: 16px;
+}
+
+/* ── Contador de tareas ── */
+#contador-tareas {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .container {
+    padding: 20px;
+  }
+  .input-group {
+    flex-direction: column;
+  }
+  #btn-agregar {
+    width: 100%;
+  }
+}
