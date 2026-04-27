@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  padding: 30px 16px;
+  min-height: 100vh;
+}
+
+/* ── Contenedor ── */
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header ── */
+.header {
+  background: #4f46e5;
+  color: white;
+  border-radius: 12px;
+  padding: 24px 28px;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.header p {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+/* ── Mensaje global ── */
+.mensaje-global {
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.mensaje-global.oculto  { display: none; }
+.mensaje-global.exito   { background: #d4edda; color: #155724; border-left: 4px solid #27ae60; }
+.mensaje-global.error   { background: #fde8e8; color: #721c24; border-left: 4px solid #e74c3c; }
+
+/* ── Formulario ── */
+form {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ── Grupo de campo ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #444;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafafa;
+  color: #333;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+  background: #fff;
+}
+
+/* ── Estados de validación ── */
+.form-group input.valido,
+.form-group select.valido {
+  border-color: #27ae60;
+  background: #f0fff4;
+}
+
+.form-group input.invalido,
+.form-group select.invalido {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+/* ── Mensaje de error ── */
+.error-msg {
+  font-size: 0.8rem;
+  color: #e74c3c;
+  min-height: 16px;
+  display: block;
+}
+
+/* ── Input con ojo de contraseña ── */
+.input-password {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.input-password input {
+  flex: 1;
+}
+
+.btn-toggle-pass {
+  padding: 8px 12px;
+  background: #e2e8f0;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-toggle-pass:hover {
+  background: #cbd5e0;
+}
+
+/* ── Indicador de fuerza ── */
+.fuerza-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.fuerza-barra {
+  flex: 1;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fuerza-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  transition: width 0.3s, background 0.3s;
+}
+
+.fuerza-fill.debil    { width: 25%; background: #e74c3c; }
+.fuerza-fill.regular  { width: 50%; background: #f39c12; }
+.fuerza-fill.buena    { width: 75%; background: #3498db; }
+.fuerza-fill.fuerte   { width: 100%; background: #27ae60; }
+
+.fuerza-texto {
+  font-size: 0.78rem;
+  font-weight: 600;
+  min-width: 80px;
+  text-align: right;
+}
+
+.fuerza-texto.debil   { color: #e74c3c; }
+.fuerza-texto.regular { color: #f39c12; }
+.fuerza-texto.buena   { color: #3498db; }
+.fuerza-texto.fuerte  { color: #27ae60; }
+
+/* ── Checkbox ── */
+.form-group--checkbox {
+  gap: 6px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: normal;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+}
+
+.link {
+  color: #4f46e5;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ── Botón submit ── */
+.btn-submit {
+  width: 100%;
+  padding: 13px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 6px;
+  font-family: inherit;
+}
+
+.btn-submit:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+  background: #a5b4fc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #888;
+  padding: 4px;
+}
+
+/* ── Autoguardado badge ── */
+.autoguardado {
+  font-size: 0.75rem;
+  color: #27ae60;
+  text-align: right;
+  height: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  form { padding: 20px 16px; }
+}

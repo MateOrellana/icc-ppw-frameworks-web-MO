@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  padding: 30px 20px;
+}
+
+/* ── Página ── */
+.page {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Contenedor ── */
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.container h1 {
+  font-size: 1.6rem;
+  color: #1a1a2e;
+  margin-bottom: 22px;
+}
+
+.container h2 {
+  font-size: 1.25rem;
+  color: #1a1a2e;
+  margin-bottom: 18px;
+}
+
+/* ── Formulario ── */
+.form-post {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4f46e5;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── Botones ── */
+button[type="submit"],
+#btn-buscar {
+  padding: 10px 22px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button[type="submit"]:hover,
+#btn-buscar:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  padding: 10px 22px;
+  background: #e2e8f0;
+  color: #444;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #cbd5e0;
+}
+
+/* ── Búsqueda ── */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 180px;
+  padding: 10px 14px;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #4f46e5;
+}
+
+.stats {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stats strong {
+  color: #4f46e5;
+  font-size: 1rem;
+}
+
+/* ── Lista de posts ── */
+.lista-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Tarjeta de post ── */
+.post-card {
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 18px 20px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+  border-color: #4f46e5;
+  box-shadow: 0 4px 16px rgba(79,70,229,0.12);
+}
+
+.post-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.post-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  flex: 1;
+}
+
+.post-card-id {
+  font-size: 0.78rem;
+  background: #e8f0fe;
+  color: #4f46e5;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.post-card-body {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.post-card-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btn-editar {
+  padding: 6px 16px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-editar:hover {
+  background: #4338ca;
+}
+
+.btn-eliminar {
+  padding: 6px 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.83rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+  background: #c0392b;
+}
+
+/* ── Spinner ── */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 14px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Mensajes ── */
+.mensaje-estado {
+  margin-top: 14px;
+}
+
+.oculto {
+  display: none;
+}
+
+.error {
+  background: #fde8e8;
+  border-left: 4px solid #e74c3c;
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.error strong {
+  display: block;
+  color: #c0392b;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.error p {
+  color: #721c24;
+  font-size: 0.88rem;
+}
+
+.success {
+  background: #d4edda;
+  border-left: 4px solid #27ae60;
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.success p {
+  color: #155724;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ── Estado vacío ── */
+.estado-vacio {
+  text-align: center;
+  padding: 40px 20px;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ── Animación fade-in ── */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+  .search-bar { flex-direction: column; }
+  .form-actions { flex-direction: column; }
+  .post-card-footer { flex-direction: column; }
+}

@@ -8,13 +8,13 @@
 </head>
 <body>
   <main class="page">
+
     <!-- SECCIÓN 1: FORMULARIO -->
     <section class="container">
       <h1>Gestor de Posts</h1>
-      
       <form id="form-post" class="form-post">
         <input type="hidden" id="post-id">
-        
+
         <div class="form-group">
           <label for="titulo">Título *</label>
           <input type="text" id="titulo" placeholder="Título del post" required>
@@ -27,7 +27,7 @@
 
         <div class="form-actions">
           <button type="submit" id="btn-submit">Crear Post</button>
-          <button type="button" id="btn-cancelar" class="btn-secondary" style="display: none;">Cancelar</button>
+          <button type="button" id="btn-cancelar" class="btn-secondary" style="display:none;">Cancelar</button>
         </div>
       </form>
     </section>
@@ -39,7 +39,6 @@
         <button type="button" id="btn-buscar">Buscar</button>
         <button type="button" id="btn-limpiar" class="btn-secondary">Limpiar</button>
       </div>
-      
       <div class="stats">
         <p id="contador">Total: <strong>0</strong> posts</p>
       </div>
@@ -48,13 +47,10 @@
     <!-- SECCIÓN 3: LISTA DE POSTS -->
     <section class="container">
       <h2>Posts</h2>
-      
-      <div id="lista-posts" class="lista-posts">
-        <!-- Los posts se renderizan aquí dinámicamente -->
-      </div>
-
-      <div id="mensaje-estado" class="mensaje-estado"></div>
+      <div id="lista-posts" class="lista-posts"></div>
+      <div id="mensaje-estado" class="mensaje-estado oculto"></div>
     </section>
+
   </main>
 
   <script defer src="js/apiService.js"></script>
