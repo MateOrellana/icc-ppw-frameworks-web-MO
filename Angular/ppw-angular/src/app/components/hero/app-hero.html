@@ -1,0 +1,21 @@
+<section class="hero">
+  <h2>{{ title() | uppercase }}</h2>
+  <p>{{ subtitle() }}</p>
+
+  <button type="button" (click)="toggleMode()">Vista: {{ viewMode() }}</button>
+
+  @switch (viewMode()) {
+    @case ('lista') {
+      <ul>
+        @for (item of topics(); track item) {
+          <li>{{ item }}</li>
+        } @empty {
+          <p>No hay temas registrados.</p>
+        }
+      </ul>
+    }
+    @case ('resumen') {
+      <p>Total de temas: <strong>{{ topics().length }}</strong></p>
+    }
+  }
+</section>

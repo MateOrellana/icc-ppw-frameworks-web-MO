@@ -1,0 +1,20 @@
+<header class="header">
+    <h1>{{brand()}}</h1>
+    <div>
+        <button (click)="changeBrand()">
+            Modificar Titulo
+        </button>
+        <button (click)="resetbrand()" 
+        [disabled]="brand() === 'PPW Angular'"
+        >
+            Resetear Titulo
+        </button>
+        <button (click)="toggleInfo()">
+            {{toggleLabel()}}
+        </button>
+    </div>
+
+    @if(showInfo()){
+        <h3>Show info es TRUE por eso muestra</h3>
+    }
+</header>
